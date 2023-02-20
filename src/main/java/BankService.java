@@ -23,6 +23,7 @@ public class BankService {
      * @param amount the amount to be deposited.
      */
     public void deposit(double amount){
+        this.balance = this.balance + amount;
 
     }
 
@@ -32,6 +33,12 @@ public class BankService {
      * @param amount the amount to be withdrawn.
      */
     public void withdraw(double amount){
+        double ba = this.balance - amount; 
+        if( ba >= 0){
+            this.balance -= amount; 
+
+        }
+
 
     }
 
@@ -40,6 +47,6 @@ public class BankService {
      * @return the user's balance.
      */
     public double getBalance(){
-        return 0;
+        return this.balance;
     }
 }
